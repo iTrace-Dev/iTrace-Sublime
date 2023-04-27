@@ -43,7 +43,7 @@ class OutputFileWriter():
         else:
             col,line = int(col+1),int(line+1)
 
-        self.file.write(f'        <response  event_id="{event_id}" plugin_time="{int(time.time())}" x="{int(x)}" y="{int(y)}" gaze_target="{name}" gaze_target_type="{ext}" source_file_path="{path}" source_file_line="{line}" source_file_col="{col}" editor_line_height="{char_height}" editor_font_height="" editor_line_base_x="" editor_line_base_y=""/>\n')
+        self.file.write(f'        <response event_id="{event_id}" plugin_time="{int(time.time())}" x="{int(x)}" y="{int(y)}" gaze_target="{name}" gaze_target_type="{ext}" source_file_path="{path}" source_file_line="{line}" source_file_col="{col}" editor_line_height="{char_height}" editor_font_height="" editor_line_base_x="" editor_line_base_y=""/>\n')
 
     def close(self):
         self.file.write( '    <gazes/>\n')

@@ -1,0 +1,5 @@
+[
+    { "caption": "iTrace: Map Screen", "command": "map_screen" },
+    { "caption": "iTrace: Connect to Core", "command": "connect_to_core" },
+    { "caption": "iTrace: Disconnect From Core", "command": "disconnect_from_core" },
+]
