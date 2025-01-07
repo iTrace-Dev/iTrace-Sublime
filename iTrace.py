@@ -38,7 +38,9 @@ class OutputFileWriter():
         text_corner_adj = crnt_view.window_to_layout((0,0))
         gaze_coord = [(x + y) for x, y in zip(text_corner_adj, gaze_coord)]
         col,line = gaze_coord[0] // char_width, gaze_coord[1] // char_height
-        if col < 0 or line < start_line or line > end_line:
+        ## Grab actual line of code to ensure gaze isn't too far to the right
+        code_line = crnt_view.substr(crnt_view.lines(sublime.Region(0,crnt_view.size()))[int(line)])
+        if col < 0 or col > len(code_line) or line < start_line or line > end_line:
             col,line = -1,-1
         else:
             col,line = int(col+1),int(line+1)
